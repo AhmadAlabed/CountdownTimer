@@ -1,0 +1,291 @@
+/* -----------Start Global Variable----------- */
+:root {
+  --mainColor: #f78400;
+  --mainBackgroundColor: #008055;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--mainBackgroundColor);
+  min-height: 100vh;
+}
+
+/* -----------End Global Variable----------- */
+/* -----------Start Container----------- */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 1320px;
+  }
+}
+
+/* -----------End Container----------- */
+.counter {
+  text-align: center;
+}
+
+.counter .title {
+  background-color: var(--mainColor);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 2rem;
+}
+
+.countdown {
+  margin-bottom: 30px;
+}
+
+.countdown .box {
+  display: inline-block;
+  width: 100px;
+  margin: 10px;
+}
+
+.countdown .box div:first-child {
+  background-color: white;
+  color: var(--mainColor);
+  font-size: 1.4rem;
+  padding: 20px 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.dateTitle {
+  padding: 5px 0;
+  background-color: var(--mainColor);
+  color: white;
+}
+
+/* ///////////////////////// */
+.change-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#show-datepicker {
+  color: white;
+  padding: 10px;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.datepicker {
+  max-width: 450px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+}
+
+.datepicker .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+}
+
+.datepicker .header .icons {
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+  color: white;
+}
+
+.datepicker .header .icons .prev,
+.datepicker .header .icons .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+}
+
+.datepicker .header .icons .prev:hover,
+.datepicker .header .icons .next:hover {
+  background-color: #f78400b0;
+}
+
+.datepicker .calendar {
+  padding: 20px;
+
+}
+
+.datepicker .calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+
+.datepicker .calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
+  z-index: 2;
+}
+
+.datepicker .calendar ul li.inactive {
+  color: #aaa;
+
+}
+
+.datepicker .calendar .weeks li {
+  font-weight: 600;
+}
+
+.datepicker .calendar .days {
+  margin-bottom: 20px;
+}
+
+.datepicker .calendar .days li {
+  margin-top: 30px;
+  cursor: pointer;
+
+}
+
+.datepicker .calendar .days li.active {
+  color: white;
+}
+
+.datepicker .calendar .days li.selected {
+  color: #f78400;
+}
+
+.datepicker .calendar .days li.active::after {
+  background-color: #f78400;
+}
+
+.datepicker .calendar .days li::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #f784006c;
+}
+
+.datepicker .calendar .days li:hover::after {
+  background-color: #f784003f;
+}
+
+#hr-input::-webkit-outer-spin-button,
+#hr-input::-webkit-inner-spin-button,
+#min-input::-webkit-outer-spin-button,
+#min-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+#hr-input,
+#min-input {
+  appearance: textfield;
+  outline: none;
+  border: none;
+  padding: 5px;
+  width: 40px;
+  text-align: center;
+  margin: 5px;
+  font-size: 1.2rem;
+}
+
+.time-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.time-picker>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+  padding: 5px;
+  background-color: var(--mainColor);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+}
+
+.fa-chevron-up:hover,
+.fa-chevron-down:hover {
+  background-color: #f784006c;
+}
+
+.my-btn {
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.my-btn button {
+  display: inline-block;
+  background-color: var(--mainBackgroundColor);
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.my-btn button:hover {
+  background-color: #008055cb;
+}
